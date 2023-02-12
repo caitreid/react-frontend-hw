@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import Card from 'react-bootstrap/Card'
 import { Link } from 'react-router-dom'
+import LoadingScreen from '../shared/LoadingScreen'
 
 // api function from our api file
 import { getAllArtists } from '../../api/artists'
@@ -45,7 +46,7 @@ const ArtistsIndex = (props) => {
 
     if (!artists) {
         // if no artists loaded yet, display 'loading'
-        return <p>...loading ...please wait</p>
+        return <LoadingScreen />
     } else if (artists.length === 0) {
         // otherwise if there ARE no artists, display that message
         return <p>No artists yet, go add some!</p>

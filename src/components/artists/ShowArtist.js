@@ -5,6 +5,7 @@ import { useParams } from 'react-router-dom'
 import { Container, Card, Button } from 'react-bootstrap'
 import { getOneArtist } from '../../api/artists'
 import messages from '../shared/AutoDismissAlert/messages'
+import LoadingScreen from '../shared/LoadingScreen'
 
 // we need to get the artist's id from the route parameters
 // then we need to make a request to the api
@@ -32,7 +33,7 @@ const ShowArtist = (props) => {
     }, [])
 
     if(!artist) {
-        return <p>loading...</p>
+        return <LoadingScreen />
     }
 
     return (
