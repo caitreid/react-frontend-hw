@@ -21,7 +21,7 @@ const cardContainerStyle = {
 const ArtistsIndex = (props) => {
     const [artists, setArtists] = useState(null)
     const [error, setError] = useState(false)
-
+    console.log('these are the artists in index', artists)
     // pull the message alert (msgAlert) from props
     const { msgAlert } = props
 
@@ -61,6 +61,11 @@ const ArtistsIndex = (props) => {
                 <Card.Text>
                     <Link to={`/artists/${artist.id}`} className="btn btn-info">View { artist.name }</Link>
                 </Card.Text>
+                { artist.owner ?
+                <Card.Footer>
+                     owner: {artist.owner.email} 
+                </Card.Footer>
+                : null}
             </Card.Body>
         </Card>
     ))

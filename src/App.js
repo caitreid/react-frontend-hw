@@ -13,6 +13,7 @@ import SignIn from './components/auth/SignIn'
 import SignOut from './components/auth/SignOut'
 import ChangePassword from './components/auth/ChangePassword'
 import ShowArtist from './components/artists/ShowArtist'
+import CreateArtist from './components/artists/CreateArtist'
 
 const App = () => {
 
@@ -69,6 +70,13 @@ const App = () => {
                 <ChangePassword msgAlert={msgAlert} user={user} />
               </RequireAuth>}
           />
+		  <Route
+				path='/create-artist'
+				element={
+				<RequireAuth user={user}>
+					<CreateArtist msgAlert={msgAlert} user={user} />
+				</RequireAuth>}
+			/>
 		  <Route 
 			path='artists/:id'
 			element={ <ShowArtist user={user} msgAlert={msgAlert} />}

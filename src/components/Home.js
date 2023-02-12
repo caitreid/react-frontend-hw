@@ -1,4 +1,5 @@
 import ArtistsIndex from './artists/ArtistsIndex'
+import Container from 'react-bootstrap/Container'
 
 
 const Home = (props) => {
@@ -6,10 +7,10 @@ const Home = (props) => {
 	console.log('props in home', props)
 
 	return (
-		<div className='container-fluid m-4'>
+		<Container className="m-2" style={{textAlign: 'center'}}>
 			<h2>See all the Artists</h2>
 			<ArtistsIndex msgAlert={ props.msgAlert } />
-		</div>
+		</Container>
 	)
 }
 
